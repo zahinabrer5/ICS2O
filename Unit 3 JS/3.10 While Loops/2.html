@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letters</title>
+</head>
+<body>
+    <input type="text" id="sentence" id="Type a sentence here"><br><br>
+    <button type="button" onclick="countLetters()">Count Letters</button><br>
+    <p>Letters: <span id="count"></span></p>
+    <script>
+        function countLetters() {
+            const sentence = document.getElementById("sentence").value.toLowerCase();
+            let count = 0;
+
+            // Loop through characters
+            // [...sentence].forEach(c => {
+            //     const code = c.charCodeAt(0);
+            //     if (97 <= code && code <= 122)
+            //         count++;
+            // });
+
+            // Get number of letter matches with regex
+            // https://stackoverflow.com/a/1072782
+            count = ((sentence  || '').match(/[a-zA-Z]/g)  || []).length;
+            
+            document.getElementById("count").innerHTML = count;
+        }
+    </script>
+</body>
+</html>

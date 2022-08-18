@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum</title>
+</head>
+<body>
+    <input type="number" id="num1" value="1"><br><br>
+    <input type="number" id="num2" value="10"><br><br>
+    <button type="button" onclick="sumRange()">Sum Range</button><br><br>
+    <p>Sum: <span id="sum"></span></p>
+    <script>
+        function sumRange() {
+            const n = Number(document.getElementById("num1").value);
+            const m = Number(document.getElementById("num2").value);
+
+            // let sum = 0;
+            // for (let i = n; i <= m; i++)
+            //     sum += i;
+            
+            const sum = m < n ? 0 : (m-n+1)*(m+n)/2; // https://math.stackexchange.com/a/2713667
+            
+            document.getElementById("sum").innerHTML = sum;
+        }
+    </script>
+</body>
+</html>

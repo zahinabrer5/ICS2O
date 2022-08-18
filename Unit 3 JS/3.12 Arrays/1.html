@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Numbers</title>
+</head>
+<body>
+    <p>Random numbers: <span id="nums"></span></p>
+    <p>Average: <span id="avg"></span></p>
+    <p>Maximum: <span id="max"></span></p>
+    <script>
+        const randNums = [];
+        let avg = 0;
+        let max = 0;
+        for (let i = 0; i < 10; i++) {
+            const randNum = Math.floor(100*Math.random())+1;
+            randNums.push(randNum);
+            avg += randNum;
+            max = randNum > max ? randNum : max;
+        }
+        avg /= 10;
+        document.getElementById("nums").innerHTML = randNums.join(", ");
+        document.getElementById("avg").innerHTML = avg;
+        document.getElementById("max").innerHTML = max;
+    </script>
+</body>
+</html>

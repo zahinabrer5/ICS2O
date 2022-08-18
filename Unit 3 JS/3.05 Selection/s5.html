@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <!-- Shizuru Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shizuru&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: black;
+        }
+        #container {
+            border: 2px lightgoldenrodyellow dashed;
+            width: 75%;
+            margin: 0 auto;
+            text-align: center;
+            color: lightgoldenrodyellow;
+            padding: 50px;
+        }
+        #container:hover {
+            border: 2px red solid;
+            background: lightgoldenrodyellow;
+            color: black;
+        }
+        #comments {
+            font-family: 'Shizuru', cursive;
+            font-size: 2em;
+        }
+        #center-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="center-div">
+        <div id="container">
+            <button id="btn" onclick="typeWriter()">Click me</button>
+            <p id="comments">You guessed correctly in 1 try!<br>You get 8 cookies!<br></p>
+        </div>
+    </div>
+    <script>
+        const number = Math.floor(10*Math.random()+1);
+        let guesses = 1;
+        while (guesses < 4) {
+            const guess = Number(prompt("Guess a number between 1 and 10..."));
+            if (isNaN(guess) || !Number.isInteger(guess) || guess < 1 || guess > 10) {
+                alert("Invalid entry");
+            } else {
+                if (guess == number) {
+                    alert("Correct!");
+                    break;
+                } else if (guess < number) {
+                    alert("Higher!");
+                } else {
+                    alert("Lower!");
+                }
+                guesses++;
+            }
+        }
+        const comments = document.getElementById("comments");
+        const btn = document.getElementById("btn");
+        const cookies = 11-3*guesses;
+        if (guesses > 3) {
+            playAgain();
+            comments.innerHTML = "You couldn't find the correct answer in 3 tries!<br>No cookies for you :(<br>The correct number was "+number;
+        } else {
+            comments.innerHTML = "You guessed correctly in "+guesses+" tr"+(guesses===1?"y":"ies")+"!<br>You get "+cookies+" cookies!<br>";
+        }
+
+        function playAgain() {
+            btn.innerHTML = "Play again";
+            btn.setAttribute("onclick", "location.reload();");
+        }
+
+        // Typewriter effect for displaying cookies:
+        // https://www.w3schools.com/howto/howto_js_typewriter.asp
+        let i = 0;
+        function typeWriter() {
+            if (i < cookies) {
+                comments.innerHTML += '🍪';
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+            playAgain();
+        }
+    </script>
+</body>
+</html>

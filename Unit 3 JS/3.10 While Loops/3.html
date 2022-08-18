@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>h4ck3r 5p34k</title>
+</head>
+<body>
+    <input type="text" id="sentence" id="Type a sentence here"><br><br>
+    <button type="button" onclick="h4ck3r5p34k()">h4ck3r1fy!</button><br>
+    <p>h4ck3r 5p34k: <span id="hecker"></span></p>
+    <img src="img/hackerman.png" alt="hackerman" width="300px">
+    <script>
+        function h4ck3r5p34k() {
+            const sentence = document.getElementById("sentence").value.toLowerCase();
+            
+            // let hecker = "";
+            // [...sentence].forEach(c => {
+            //     switch (c) {
+            //         case 'a':
+            //             hecker += 4;
+            //             break;
+            //         case 'e':
+            //             hecker += 3;
+            //             break;
+            //         case 'i':
+            //             hecker += 1;
+            //             break;
+            //         case 'o':
+            //             hecker += 0;
+            //             break;
+            //         case 's':
+            //             hecker += 5;
+            //             break;
+            //         default:
+            //             hecker += c;
+            //             break;
+            //     }
+            // });
+
+            const hecker = sentence
+                .replaceAll('a', 4)
+                .replaceAll('e', 3)
+                .replaceAll('i', 1)
+                .replaceAll('o', 0)
+                .replaceAll('s', 5)
+                .replaceAll('b', 8)
+                .replaceAll('t', 7)
+                .replaceAll('g', 6);
+            
+            document.getElementById("hecker").innerHTML = hecker;
+        }
+    </script>
+</body>
+</html>

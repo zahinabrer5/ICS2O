@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip</title>
+</head>
+<body>
+    <button onclick="coinFlip()">Click me for a coin flip!</button>
+    <script>
+        function coinFlip() {
+            let side = Math.floor(2*Math.random())+1;
+            console.log(side == 1 ? "Heads" : "Tails");
+        }
+    </script>
+</body>
+</html>

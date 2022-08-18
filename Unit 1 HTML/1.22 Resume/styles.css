@@ -1,0 +1,15 @@
+/*
+Make footer stick to bottom of page
+Code from: https://dev.to/nehalahmadkhan/how-to-make-footer-stick-to-bottom-of-web-page-3i14
+*/
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+}

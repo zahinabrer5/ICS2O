@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahin's Cool Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="outer-container">
+        <div id="container">
+            <div id="options">
+                <b><p id="log-base">Base to use for log function: <input type="number" onchange="updateLogBase(this.value)" value="10"></p>
+                <p>Memory: <span id="memDisp">(empty)</span></p>
+                <p>Rand: <span id="randDisp"></span></p></b>
+            </div>
+            <table id="calculator">
+                <tr>
+                    <td colspan="2">
+                        <!--
+                            FOR ANYONE VIEWING CODE
+                            eval() CAN BE VERY DANGEROUS
+                            DON'T ENTER SOMETHING STUPID INTO THE FOLLOWING
+                            TEXT INPUT THAT COULD DESTROY YOUR COMPUTER
+                            Consider yourself warned
+                        -->
+                        <input type="text" id="screen" onchange="keyboard(this.value)">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td><button onclick="exp()">exp</button></td>
+                                <td><button onclick="ln()">ln</button></td>
+                                <td><button onclick="logx()">log</button></td>
+                                <td><button onclick="log(2)">log2</button></td>
+                                <td><button onclick="log(10)">log10</button></td>
+                                <td><button class="brackets" onclick="addDigit('(')">(</button></td>
+                                <td><button class="brackets" onclick="addDigit(')')">)</button></td>
+                            </tr>
+                            <tr>
+                                <td><button class="comfort-features" id="angle-unit-toggle" onclick="updateAngleUnit()" value="rad">DEG</button></td>
+                                <td><button onclick="trig('sin')">sin</button></td>
+                                <td><button onclick="trig('cos')">cos</button></td>
+                                <td><button onclick="trig('tan')">tan</button></td>
+                                <td><button onclick="addOper('**2')">x^2</button></td>
+                                <td><button onclick="addOper('**3')">x^3</button></td>
+                                <td><button onclick="addOper('**')">x^y</button></td>
+                            </tr>
+                            <tr>
+                                <td><button onclick="abs()">abs</button></td>
+                                <td><button onclick="trig('asin')">asin</button></td>
+                                <td><button onclick="trig('acos')">acos</button></td>
+                                <td><button onclick="trig('atan')">atan</button></td>
+                                <td><button onclick="addOper('**0.5')">&radic;</button></td>
+                                <td><button onclick="addOper('**(1/3)')">&#x221B;</button></td>
+                                <td><button onclick="addOper('**(1/')">x^(1/y)</button></td>
+                            </tr>
+                            <tr>
+                                <td><button onclick="getFactorial()">x!</button></td>
+                                <td><button onclick="trig('sinh')">sinh</button></td>
+                                <td><button onclick="trig('cosh')">cosh</button></td>
+                                <td><button onclick="trig('tanh')">tanh</button></td>
+                                <td><button onclick="tenToX()">10^x</button></td>
+                                <td><button onclick="addOper('*10**')">*10^x</button></td>
+                                <td><button onclick="addOper('/100')">%</button></td>
+                            </tr>
+                            <tr>
+                                <td><button onclick="mod()">mod</button></td>
+                                <td><button onclick="trig('asinh')">asinh</button></td>
+                                <td><button onclick="trig('acosh')">acosh</button></td>
+                                <td><button onclick="trig('atanh')">atanh</button></td>
+                                <td><button onclick="addOper('**(-1)')">1/x</button></td>
+                                <td><button onclick="e()">e</button></td>
+                                <td><button onclick="pi()">&#960;</button></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td><button class="memory" onclick="MS()">MS</button></td>
+                                <td><button class="memory" onclick="MC()">MC</button></td>
+                                <td><button class="memory" onclick="MR()">MR</button></td>
+                                <td><button class="memory" onclick="Madd()">M+</button></td>
+                                <td><button class="memory" onclick="Msub()">M-</button></td>
+                            </tr>
+                            <tr>
+                                <td><button class="vars" onclick="getAns()">Ans</button></td>
+                                <td><button class="numpad" onclick="addDigit(7)">7</button></td>
+                                <td><button class="numpad" onclick="addDigit(8)">8</button></td>
+                                <td><button class="numpad" onclick="addDigit(9)">9</button></td>
+                                <td><button class="basic-opers" onclick="addOper('/')">/</button></td>
+                            </tr>
+                            <tr>
+                                <td><button class="vars" onclick="rand()">Rand</button></td>
+                                <td><button class="numpad" onclick="addDigit(4)">4</button></td>
+                                <td><button class="numpad" onclick="addDigit(5)">5</button></td>
+                                <td><button class="numpad" onclick="addDigit(6)">6</button></td>
+                                <td><button class="basic-opers" onclick="addOper('*')">*</button></td>
+                            </tr>
+                            <tr>
+                                <td><button class="comfort-features" onclick="DEL()">DEL</button></td>
+                                <td><button class="numpad" onclick="addDigit(1)">1</button></td>
+                                <td><button class="numpad" onclick="addDigit(2)">2</button></td>
+                                <td><button class="numpad" onclick="addDigit(3)">3</button></td>
+                                <td><button class="basic-opers" onclick="addDigit('-')">-</button></td>
+                            </tr>
+                            <tr>
+                                <td><button class="comfort-features" onclick="CE()">CE</button></td>
+                                <td><button class="numpad" onclick="addDigit(0)">0</button></td>
+                                <td><button class="numpad" onclick="addOper('.')">.</button></td>
+                                <td><button id="equals" onclick="equals()">=</button></td>
+                                <td><button class="basic-opers" onclick="addOper('+')">+</button></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

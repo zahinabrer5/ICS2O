@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>f1.html</title>
+</head>
+<body>
+    <script>
+        function areaCircle(r) {
+            return Math.PI*r**2;
+        }
+
+        let r = Number(prompt("Enter radius:"));
+        while (isNaN(r)) {
+            alert("Invalid radius");
+            r = Number(prompt("Enter radius:"));
+        }
+
+        document.write("Radius: " + r + "<br>")
+        document.write("Area of circle: " + areaCircle(r));
+    </script>
+</body>
+</html>

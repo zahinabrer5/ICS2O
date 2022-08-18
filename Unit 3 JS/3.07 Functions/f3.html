@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>f3.html</title>
+</head>
+<body>
+    <script>
+        function randRange(max, min) {
+            return Math.floor((max-min+1)*Math.random())+min;
+        }
+        
+        function randMathProb(aMin, aMax, bMin, bMax) {
+            const a = randRange(aMin, aMax);
+            const b = randRange(bMin, bMax);
+            let operation;
+            const rand = Math.random();
+            if (rand < 0.25) {
+                operation = '+';
+            } else if (rand < 0.5) {
+                operation = '-';
+            } else if (rand < 0.75) {
+                operation = '*';
+            } else {
+                operation = '/';
+            }
+            return a + ' ' + operation + ' ' + b;
+        }
+
+        let aMin = Number(prompt("Enter mininum value for first number:"));
+        while (isNaN(aMin) || (!Number.isInteger(aMin) && aMin != 0)) {
+            alert("Invalid value");
+            aMin = Number(prompt("Enter mininum value for first number:"));
+        }
+        
+        let aMax = Number(prompt("Enter maximum value for first number:"));
+        while (isNaN(aMax) || (!Number.isInteger(aMax) && aMax != 0)) {
+            alert("Invalid value");
+            aMax = Number(prompt("Enter maximum value for first number:"));
+        }
+        
+        let bMin = Number(prompt("Enter mininum value for second number:"));
+        while (isNaN(bMin) || (!Number.isInteger(bMin) && bMin != 0)) {
+            alert("Invalid value");
+            bMin = Number(prompt("Enter mininum value for second number:"));
+        }
+        
+        let bMax = Number(prompt("Enter maximum value for second number:"));
+        while (isNaN(bMax) || (!Number.isInteger(bMax) && bMax != 0)) {
+            alert("Invalid value");
+            bMax = Number(prompt("Enter maximum value for second number:"));
+        }
+
+        document.write("Your random math problem: " + randMathProb(aMin, aMax, bMin, bMax));
+    </script>
+</body>
+</html>

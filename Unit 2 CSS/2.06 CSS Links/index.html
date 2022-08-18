@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Links</title>
+    <style>
+        /*
+        a:link {
+            color: red;
+        }
+        a:visited {
+            color: green;
+        }
+        a:hover {
+            color: hotpink;
+        }
+        a:active {
+            color: blue;
+        }
+        */
+        a:link, a:visited {
+            background-color: grey;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-family: Verdana;
+        }
+        a:hover, a:active {
+            background-color: powderblue;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Link One</a>
+    <a href="https://www.google.com">Link Two</a>
+    <a href="#yeet">Link Three</a>
+    <a href="#">Link Four</a>
+    <script>
+        for (let i = 0; i < 1000; i++) {
+            document.write("<br>");
+        }
+    </script>
+    <p id="yeet">yeet</p>
+</body>
+</html>

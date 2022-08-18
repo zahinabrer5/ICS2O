@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <p>Register your Jackson Electronics product here.</p>
+    <form action="">
+        <table>
+            <tr>
+                <td><label for="firstname">First Name:</label></td>
+                <td><input type="text" name="firstname" id="firstname" class="short-text" maxlength="50" required></td>
+            </tr>
+            <tr>
+                <td><label for="lastname">Last Name:</label></td>
+                <td><input type="text" name="lastname" id="lastname" class="short-text" maxlength="50" required></td>
+            </tr>
+            <tr>
+                <td><label for="address"></label>Address:</td>
+                <td><input type="text" name="address" id="address" class="short-text" maxlength="100" required></td>
+            </tr>
+            <tr>
+                <td><label for="city">City:</label></td>
+                <td><input type="text" name="city" id="city" maxlength="50" required></td>
+            </tr>
+            <tr>
+                <td><label for="state">State/Province:</label></td>
+                <td><input type="text" name="state" id="state" maxlength="50" required></td>
+            </tr>
+            <tr>
+                <td><label for="zip">Zip:</label></td>
+                <td><input type="text" name="zip" id="zip" maxlength="10" required></td>
+            </tr>
+            <tr>
+                <td><label for="country">Country:</label></td>
+                <td><input type="text" name="country" value="Canada" id="country" maxlength="50" required></td>
+            </tr>
+        </table>
+        <hr>
+        <table>
+            <tr>
+                <td><label for="product">Product:</label></td>
+                <td>
+                    <select name="product" id="product">
+                        <option label="Scanmaster" value="Scanmaster"></option>
+                        <option label="Macbook" value="Macbook"></option>
+                        <option label="iPad" value="iPad"></option>
+                        <option label="iPhone 13" value="iPhone 13"></option>
+                        <option label="iPhone 11" value="iPhone 11"></option>
+                        <option label="iPhone X" value="iPhone X"></option>
+                        <option label="Chromebook" value="Chromebook"></option>
+                        <option label="Dell PC" value="Dell PC"></option>
+                        <option label="iMac" value="iMac"></option>
+                        <option label="ASUS ROG Gaming PC" value="ASUS ROG Gaming PC"></option>
+                        <option label="Lenovo Thinkpad" value="Lenovo Thinkpad"></option>
+                        <option label="Acer Aspire V5" value="Acer Aspire V5"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="date">Date Purchased:</label>
+                </td>
+                <td>
+                    <!-- <input type="date" name="date" id="date" min="2006-04-03" required> -->
+                    <input type="text" name="date" id="date" maxlength="12" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="serial">Serial #:</label>
+                </td>
+                <td>
+                    <!-- <input type="number" name="serial" id="serial" min="0" max="9999999999" required> -->
+                    <input type="number" name="serial" id="serial" maxlength="10" required>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">Used For:</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="radio" name="usage" id="home" value="home" required>
+                                <label for="home">Home</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="usage" id="educational" value="educational">
+                                <label for="educational">Educational</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" name="usage" id="business" value="business">
+                                <label for="business">Business</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="usage" id="other" value="other">
+                                <label for="other">Other</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" name="usage" id="government" value="government">
+                                <label for="government">Government</label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">System (check all that apply):</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="windows" id="windows" value="windows">
+                                <label for="windows">Windows</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="unix" id="unix" value="unix">
+                                <label for="unix">Unix</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="macintosh" id="macintosh" value="macintosh">
+                                <label for="macintosh">Macintosh</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="linux" id="linux" value="linux">
+                                <label for="linux">Linux</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="checkbox" name="other" id="other" value="other">
+                                <label for="other">Other</label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <table>
+            <tr>
+                <td valign="top"><label for="comments">Comments?</label></td>
+                <td><textarea name="comments" id="comments" cols="50" rows="5" maxlength="500"></textarea></td>
+            </tr>
+            <tr>
+                <td>Add me to the mailing list?</td>
+                <td>
+                    <input type="radio" name="mailing-list" id="yes" value="yes" required>
+                    <label for="yes">Yes</label>
+                    <input type="radio" name="mailing-list" id="no" value="no">
+                    <label for="no">No</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="email">E-mail Address:</label></td>
+                <td><input type="email" name="email" id="email" maxlength="50"></td>
+            </tr>
+        </table>
+        <div id="btn">
+            <input type="submit" value="Click to Register">
+            <input type="reset" value="Click to Cancel">
+        </div>
+    </form>
+</body>
+</html>

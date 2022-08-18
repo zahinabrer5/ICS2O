@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle</title>
+</head>
+<body>
+    <script>
+        function recArea(l, w) {
+            return l*w;
+        }
+
+        function recPerim(l, w) {
+            return 2*(l+w);
+        }
+
+        function recIsSqr(l, w) {
+            return l == w ? "Yes" : "No";
+        }
+
+        function recRatio(l, w) {
+            var GCD = l;
+            var b = w;
+            while (b != 0) {
+                var t = b;
+                b = GCD % b;
+                GCD = t;
+            }
+            return (l/GCD) + ':' + (w/GCD);
+        }
+
+        function runCalcs() {
+            var l = Number(document.getElementById("myLength").value);
+            var w = Number(document.getElementById("myWidth").value);
+            if (!(isNaN(l) || l < 0 || isNaN(w) || w < 0)) {
+                document.getElementById("areaParagraph").innerHTML = recArea(l, w);
+                document.getElementById("perimParagraph").innerHTML = recPerim(l, w);
+                document.getElementById("sqrParagraph").innerHTML = recIsSqr(l, w);
+                document.getElementById("ratioParagraph").innerHTML = recRatio(l, w);
+            }
+        }
+    </script>
+
+    <form>
+        Rectangle Calculations:<br><br>
+        Length<br>
+        <input type="text" id="myLength" value=20><br>
+        Width<br>
+        <input type="text" id="myWidth" value=4><br><br>
+        <button type="button" onclick="runCalcs()">Run Calculations</button>
+    </form>
+    <p>Area: <span id="areaParagraph"></span></p>
+    <p>Perimeter: <span id="perimParagraph"></span></p>
+    <p>Is it a Square? <span id="sqrParagraph"></span></p>
+    <p>Length to Width Ratio: <span id="ratioParagraph"></span></p>
+</body>
+</html>

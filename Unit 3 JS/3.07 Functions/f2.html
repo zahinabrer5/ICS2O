@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>f2.html</title>
+</head>
+<body>
+    <script>
+        function secretWord() {
+            const words = ["dingus", "hello", "goodbye", "supercalifragilisticexpialidocious", "word", "secret"];
+            return words[Math.floor(Math.random()*words.length)];
+        }
+
+        document.write("Secret word: " + secretWord());
+    </script>
+</body>
+</html>

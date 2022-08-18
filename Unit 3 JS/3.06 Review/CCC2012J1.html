@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CCC 2021 Problem J1</title>
+</head>
+<body>
+	<script>
+		let speedLimit = Number(prompt("Enter the speed limit:"));
+		while (isNaN(speedLimit) || (!Number.isInteger(speedLimit) && speedLimit !== 0) || speedLimit < 0)
+			speedLimit = Number(prompt("Enter the speed limit:"));
+		
+		let speed = Number(prompt("Enter the recorded speed of the car:"));
+		while (isNaN(speed) || (!Number.isInteger(speed) && speed !== 0) || speed < 0)
+			speed = Number(prompt("Enter the recorded speed of the car:"));
+
+		const diff = speed - speedLimit;
+		let F;
+		if (diff < 1) {
+			F = -1;
+		} else if (diff < 21) {
+			F = 100;
+		} else if (diff < 31) {
+			F = 270;
+		} else {
+			F = 500;
+		}
+		document.write(F < 0 ? "Congratulations, you are within the speed limit!" : "You are speeding and your fine is $"+F+".");
+	</script>
+</body>
+</html>

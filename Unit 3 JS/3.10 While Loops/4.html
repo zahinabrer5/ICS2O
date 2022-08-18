@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pig Latin Translator</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #FDD7E4;
+            background-image: url('img/pig.png');
+            background-repeat: round;
+        }
+
+        #container {
+            width: 100%;
+            text-align: center;
+        }
+
+        #eng, #pig {
+            width: 45%;
+            margin: 20px;
+            height: calc(100vh - 65px);
+            resize: none;
+            font-size: xx-large;
+            opacity: 75%;
+            background-color: white;
+            color: rgb(34, 34, 34);
+            border-color: rgb(34, 34, 34);
+            font-family: 'Shadows Into Light Two', cursive;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <textarea name="eng" id="eng" cols="30" rows="10">Type text here...</textarea>
+        <textarea name="pig" id="pig" cols="30" rows="10" disabled>igpay atinlay ranslationtay</textarea>
+    </div>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    
+    <script>
+        $("#eng").bind('input propertychange', () => { // update output field as input field is updated
+            let msg = document.getElementById("eng").value;
+            msg = msg.match(/\b(\w+)\b/g); // match words (https://stackoverflow.com/a/36508315)
+            msg = msg.map((word) => {
+                word = word.toLowerCase();
+                let startsWithVowel = "aeiou".includes(word.charAt(0));
+                let suffix = (startsWithVowel ? '' : word.charAt(0)) + 'ay';
+                return (startsWithVowel ? word : word.substring(1)) + suffix;
+            }).join(' ');
+            document.getElementById("pig").value = msg;
+        });
+    </script>
+</body>
+</html>

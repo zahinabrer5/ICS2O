@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings Exercise 2</title>
+</head>
+<body>
+    <textarea name="in" id="in" cols="30" rows="10"></textarea><br><br>
+    <button onclick="pplea()">Translate</button><br><br>
+    <textarea name="out" id="out" cols="30" rows="10"></textarea><br><br>
+    <script>
+        function pplea() {
+            let msg = document.getElementById("in").value;
+            msg = msg.match(/\b(\w+)\b/g); // match words (https://stackoverflow.com/a/36508315)
+            msg = msg.map((word) => {
+                word = word.toLowerCase();
+                if ("aeiou".includes(word.charAt(0)))
+                    return word.substring(1)+word.charAt(0);
+                return word + 'ly';
+            }).join(' ');
+            document.getElementById("out").value = msg;
+        }
+    </script>
+</body>
+</html>

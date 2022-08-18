@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number of Words</title>
+</head>
+<body>
+    <input type="text" id="sentence" value="Type a sentence here"><br><br>
+    <button type="button" onclick="countWords()">Count Words</button><br><br>
+    <p>Word Count: <span id="count"></span></p>
+    <script>
+        function countWords() {
+            const sentence = document.getElementById("sentence").value;
+
+            // Count spaces with for-loop
+            // let words = 1;
+            // for (let i = 0; i < sentence.length; i++)
+            //     if (sentence.charAt(i) == ' ')
+            //         words++;
+            // document.getElementById("count").innerHTML = words;
+
+            // Using split
+            // const words = sentence.split(' ');
+            
+            // Matching words with regex (https://stackoverflow.com/a/36508315)
+            const words = sentence.match(/\b(\w+)\b/g);
+                        
+            document.getElementById("count").innerHTML = words.length;
+        }
+    </script>
+</body>
+</html>

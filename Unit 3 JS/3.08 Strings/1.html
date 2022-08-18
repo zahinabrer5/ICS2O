@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings Exercise 1</title>
+</head>
+<body>
+    <input id="myInput1" value="Put a sentence here"><br><br>
+    <input id="myInput2" value=""><br><br>
+    <button onclick="useSubstring()">substring()</button><br><br>
+    <button onclick="useIndexOf()">indexOf()</button><br><br>
+    <button onclick="useLastIndexOf()">lastIndexOf()</button><br><br>
+    <button onclick="useReplace()">replace()</button><br><br>
+    <button onclick="useReplaceAll()">replaceAll()</button><br><br>
+    <button onclick="useToLowerCase()">toLowerCase()</button><br><br>
+    <button onclick="useToUpperCase()">toUpperCase()</button><br><br>
+    <button onclick="useLength()">length</button><br><br>
+    <button onclick="useStartsWith()">startsWith()</button><br><br>
+    <button onclick="useEndsWith()">endsWith()</button><br><br>
+    <button onclick="useCharAt()">charAt()</button><br><br>
+    <button onclick="useFromCharCode()">String.fromCharCode()</button><br><br>
+    <button onclick="compareStrings()">Compare strings</button><br><br>
+    <script>
+        const input1 = document.getElementById("myInput1");
+        const input2 = document.getElementById("myInput2");
+        
+        function useSubstring() {
+            const sentence = input1.value;
+            const num = input2.value;
+            alert(sentence.substring(0, num));
+        }
+        
+        function useIndexOf() {
+            const sentence = input1.value;
+            const search = input2.value;
+            const idx = sentence.indexOf(search);
+            if (idx == -1)
+                return alert(search + " was NOT found");
+            alert(search + " was found at position " + idx);
+        }
+        
+        function useLastIndexOf() {
+            const sentence = input1.value;
+            const search = input2.value;
+            const idx = sentence.lastIndexOf(search);
+            if (idx == -1)
+                return alert(search + " was NOT found");
+            alert(search + " was found at position " + idx);
+        }
+        
+        function useReplace() {
+            const sentence = input1.value;
+            const search = input2.value;
+            const replacement = prompt("What do you want to replace the first occurence of \""+search+"\" with?");
+            alert(sentence.replace(search, replacement));
+        }
+
+        function useReplaceAll() {
+            const sentence = input1.value;
+            const search = input2.value;
+            const replacement = prompt("What do you want to replace all the occurences of \""+search+"\" with?");
+            alert(sentence.replaceAll(search, replacement));
+        }
+        
+        function useToLowerCase() {
+            const sentence = input1.value;
+            alert(sentence.toLowerCase());
+        }
+        
+        function useToUpperCase() {
+            const sentence = input1.value;
+            alert(sentence.toUpperCase());
+        }
+        
+        function useLength() {
+            const sentence = input1.value;
+            alert("The length of \""+sentence+"\" is "+sentence.length);
+        }
+        
+        function useStartsWith() {
+            const sentence = input1.value;
+            const search = input2.value;
+            if (sentence.startsWith(search))
+                return alert(`"${sentence}" does indeed start with "${search}"`);
+            alert(`"${sentence}" does NOT start with "${search}"`);
+        }
+        
+        function useEndsWith() {
+            const sentence = input1.value;
+            const search = input2.value;
+            if (sentence.endsWith(search))
+                return alert(`"${sentence}" does indeed end with "${search}"`);
+            alert(`"${sentence}" does NOT end with "${search}"`);
+        }
+        
+        function useCharAt() {
+            const sentence = input1.value;
+            const idx = input2.value;
+            if (idx < sentence.length)
+                return alert(`The character at position ${idx} is '${sentence.charAt(idx)}'`);
+            alert("Given index too large!");
+        }
+        
+        function useFromCharCode() {
+            const code = Number(prompt("Enter an ASCII code:"));
+            alert(`The ASCII code ${code} corresponds to the character '${String.fromCharCode(code)}'`);
+        }
+        
+        function compareStrings() {
+            const str1 = input1.value;
+            const str2 = input2.value;
+            alert(`
+                "${str1}" == "${str2}": ${str1 == str2}\n
+                "${str1}" != "${str2}": ${str1 != str2}\n
+                "${str1}" > "${str2}": ${str1 > str2}\n
+                "${str1}" >= "${str2}": ${str1 >= str2}\n
+                "${str1}" < "${str2}": ${str1 < str2}\n
+                "${str1}" <= "${str2}": ${str1 <= str2}\n
+            `);
+        }
+    </script>
+</body>
+</html>

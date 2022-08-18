@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byte the Bullet</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- DM Mono font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
+    <!-- Noto Sans font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Social media buttons (used tutorial) -->
+    <link rel="stylesheet" href="social-media-btns.css">
+    <!-- Custom styling -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Navbar styling -->
+    <link rel="stylesheet" href="nav.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <ul class="nav">
+        <li class="nav-item"><a class="active" href="index.html">Home</a></li>
+        <li class="nav-item dropdown">
+            <a href="#">Products <i class="fa fa-caret-down"></i></a>
+            <div class="dropdown-content">
+                <a href="computers/alienware.html">Alienware Gaming PC</a>
+                <a href="computers/thinkbook.html">Lenovo Thinkbook</a>
+                <a href="computers/mbp.html">MacBook Pro 13"</a>
+            </div>
+        </li>
+        <li class="nav-item"><a href="comparison.html">Comparison</a></li>
+        <li class="nav-item"><a href="glossary.html">Glossary</a></li>
+        <li class="nav-item"><a href="buy.html">Purchase</a></li>
+        <li class="nav-item"><a href="about.html">About Us</a></li>
+        <li class="nav-item right"><a href="account.html">My Account</a></li>
+    </ul>
+    <div class="background">
+        <div class="background-tint"></div>
+        <div class="background-img"></div>
+    </div>
+    <div class="content">
+        <h1 class="product-heading">Our Latest & Greatest Products</h1>
+        <table class="products">
+            <tr>
+                <td class="product-hover"><a href="computers/alienware.html"><img class="product" src="images/alienware.png"></a></td>
+                <td class="product-hover"><a href="computers/thinkbook.html"><img class="product" src="images/lenovo.png"></a></td>
+                <td class="product-hover"><a href="computers/mbp.html"><img class="product" src="images/mbp.png"></a></td>
+            </tr>
+            <tr>
+                <td><a class="product-link" href="computers/alienware.html"><p class="product-name">ALIENWARE AURORA R12 GAMING DESKTOP</p></a></td>
+                <td><a class="product-link" href="computers/thinkbook.html"><p class="product-name">ThinkBook 16p Gen 2 (16" AMD) Laptop</p></a></td>
+                <td><a class="product-link" href="computers/mbp.html"><p class="product-name">MacBook Pro 13"</p></a></td>
+            </tr>
+        </table>
+    </div>
+    <!-- <p>dingus fingus mingus lingus</p> -->
+    <div class="footer">
+        <p>Copyright &copy; 2021 Zahin and Elias</p>
+        <!--
+        I followed a youtube tutorial for making these social media buttons
+        When you hover over them, there's a little animation of the brands' color
+        popping out into the icons
+        The cool part in my opinion is that it's done in pure CSS - no JavaScript!
+        Video: https://youtu.be/0MzVTOQaFFc
+        -->
+        <ul class="social-media-btns">
+            <li><a href="https://instagram.com/milkdudyeetdingus" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/milkdudyeetdingus" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://youtube.com/user/milkdud" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+            <li><a href="https://github.com/zahinabrer5" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+        </ul>
+    </div>
+
+    <!--
+    JavaScript snow effect from http://www.schillmania.com/projects/snowstorm/
+    It moves with your cursor!!!!
+    -->
+    <script src="snowstorm.js"></script>
+</body>
+</html>

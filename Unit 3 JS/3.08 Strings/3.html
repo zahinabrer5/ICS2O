@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings Exercise 3</title>
+</head>
+<body>
+    <input type="text" id="str" value="Put a string here">
+    <input type="text" id="substr" value="Put a substring here">
+    <button onclick="getInfo()">Get info</button>
+    <script>
+        function getInfo() {
+            const str = document.getElementById("str").value;
+            const sub = document.getElementById("substr").value;
+            let out = `String length: ${str.length}\n`;
+            let idx = str.indexOf(sub);
+            if (idx == -1)
+                out += `Substring not found in string`;
+            else {
+                out += `Substring first position: ${idx}\n`;
+                out += `Substring last position: ${str.lastIndexOf(sub)}`;
+            }
+            alert(out);
+        }
+    </script>
+</body>
+</html>

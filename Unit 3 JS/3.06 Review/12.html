@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quadratic Solver (Question 12)</title>
+</head>
+<body>
+	<script>
+		let a = Number(prompt("a = ?"));
+		while (isNaN(a) || a === '') {
+			alert("Invalid value");
+			a = Number(prompt("a = ?"));
+		}
+
+		let b = Number(prompt("b = ?"));
+		while (isNaN(b) || b === '') {
+			alert("Invalid value");
+			b = Number(prompt("b = ?"));
+		}
+
+		let c = Number(prompt("c = ?"));
+		while (isNaN(c) || c === '') {
+			alert("Invalid value");
+			c = Number(prompt("c = ?"));
+		}
+
+		document.write(`y=${a}x^2${(b<0?'':'+')+b}x${(c<0?'':'+')+c}<br>`);
+
+		let numSols = 0;
+
+		if (a == 0) {
+			numSols++;
+			if (b == 0) {
+				numSols--;
+				if (c == 0)
+					numSols = "Infinite";
+			}
+		} else {
+			const discriminant = b**2 - 4*a*c;
+            let sols = "x = ";
+			if (discriminant >= 0) {
+				numSols++;
+				const r = (-b + Math.sqrt(discriminant))/(2*a);
+				sols += r;
+				if (discriminant > 0) {
+					const s = (-b - Math.sqrt(discriminant))/(2*a);
+					numSols++;
+					sols += ", " + s;
+				}
+			}
+            document.write(numSols > 0 ? sols : '');
+		}
+		
+		document.write(numSols + " real number solution" + (numSols == 1 ? '' : 's') + "<br>");
+	</script>
+</body>
+</html>

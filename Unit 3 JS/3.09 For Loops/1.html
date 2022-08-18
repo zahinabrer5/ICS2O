@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        #ranges {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="num1" value="1"><br><br>
+    <input type="number" id="num2" value="10"><br><br>
+    <button type="button" onclick="getRanges()">Get ranges</button><br><br>
+    <div id="ranges">
+        <p>All: <span id="range1"></span></p>
+        <p>Even: <span id="range2"></span></p>
+        <p>Reverse: <span id="range3"></span></p>
+    </div>
+    <script>
+        function getRanges() {
+            const num1 = Number(document.getElementById("num1").value);
+            const num2 = Number(document.getElementById("num2").value);
+            
+            // let range1 = [];
+            // let range2 = [];
+            // let range3 = [];
+            // for (let i = num1, j = num2; i <= num2; i++, j--) {
+            //     range1.push(i);
+            //     if (!(i & 1))
+            //         range2.push(i);
+            //     range3.push(j);
+            // }
+
+            let range1 = [];
+            for (let i = num1; i <= num2; i++)
+                range1.push(i);
+            let range2 = range1.filter(x => !(x & 1)); // https://stackoverflow.com/a/5700938
+            let range3 = [...range1].reverse(); // https://stackoverflow.com/a/5700938 (see comment by Hinrich)
+            
+            document.getElementById("range1").innerHTML = range1.join(", ");
+            document.getElementById("range2").innerHTML = range2.join(", ");
+            document.getElementById("range3").innerHTML = range3.join(", ");
+        }
+    </script>
+</body>
+</html>

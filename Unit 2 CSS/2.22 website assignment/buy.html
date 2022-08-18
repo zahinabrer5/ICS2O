@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Purchase</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- DM Mono font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
+    <!-- Noto Sans font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Social media buttons (used tutorial) -->
+    <link rel="stylesheet" href="social-media-btns.css">
+    <!-- Custom styling -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Navbar styling -->
+    <link rel="stylesheet" href="nav.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        body {
+            background-image: linear-gradient(45deg, #7400B8, #80FFDB);
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item dropdown">
+            <a href="#">Products <i class="fa fa-caret-down"></i></a>
+            <div class="dropdown-content">
+                <a href="computers/alienware.html">Alienware Gaming PC</a>
+                <a href="computers/thinkbook.html">Lenovo Thinkbook</a>
+                <a href="computers/mbp.html">MacBook Pro 13"</a>
+            </div>
+        </li>
+        <li class="nav-item"><a href="comparison.html">Comparison</a></li>
+        <li class="nav-item"><a href="glossary.html">Glossary</a></li>
+        <li class="nav-item"><a class="active" href="buy.html">Purchase</a></li>
+        <li class="nav-item"><a href="about.html">About Us</a></li>
+        <li class="nav-item right"><a href="account.html">My Account</a></li>
+    </ul>
+    <div class="buy">
+        <form action="" method="GET">
+            <h1>Make a Purchase!</h1>
+            <table class="buy-form-table">
+                <tr>
+                    <td>
+                        <h3>Contact Information</h3>
+                        <label for="fullname">Full Name</label><br>
+                        <input type="text" id="fullname" name="fullname" value="" required><br><br>
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="email" value="" required><br><br>
+                        <input type="checkbox" id="useacc" name="useacc" value="useacc">
+                        <label for="useacc">Use my account's name and email</label><br><br>
+                        <label for="birthdate">Birthdate</label><br>
+                        <input type="date" id="birthdate" name="birthdate" value="" min="1900-01-01" max="2003-01-01" required><br><br>
+                        <label for="phone">Phone Number</label><br>
+                        <!-- RegEx pattern for phone number
+                        Taken from https://stackoverflow.com/a/19445717
+                        -->
+                        <input type="text" id="phone" name="phone" value="" pattern="[1-9]{1}[0-9]{9}" required>
+                    </td>
+                    <td>
+                        <h3>Shipping Information</h3>
+                        <label for="addr1">Address 1</label><br>
+                        <input type="text" id="addr1" name="addr1" value="" required><br><br>
+                        <label for="addr2">Address 2</label><br>
+                        <input type="text" id="addr2" name="addr2" value=""><br><br>
+                        <label for="city">City</label><br>
+                        <input type="text" id="city" name="city" value="" required><br><br>
+                        <label for="region">Region</label><br>
+                        <input type="text" id="region" name="region" value="" required><br><br>
+                        <label for="postal">Postal/ZIP Code</label><br>
+                        <!--
+                        The following input field uses a RegEx pattern to
+                        match either an American ZIP code or Canadian
+                        postal code, but will not match both (XOR)
+                        ZIP code: https://stackoverflow.com/a/23676859
+                        Postal code: https://stackoverflow.com/a/46761018
+                        XOR in RegEx: https://stackoverflow.com/a/25742668
+                        -->
+                        <input type="text" id="postal" name="postal" value=""
+                            pattern="^([0-9]{5}|^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$)$" required><br><br>
+                        <label for="country">Country</label><br>
+                        <input type="radio" name="country" id="can" value="can">
+                        <label for="can">Canada</label>
+                        <input type="radio" name="country" id="us" value="us">
+                        <label for="us">United States</label>
+                    </td>
+                    <td>
+                        <h3>Credit Card Information</h3>
+                        <label for="product">Product</label><br>
+                        <select name="product" id="product">
+                            <option value="alienware">Alienware Aurora Desktop</option>
+                            <option value="thinkbook">Lenovo ThinkBook 16"</option>
+                            <option value="mbp">MacBook Pro 13"</option>
+                        </select>
+                        <br><br>
+                        <label for="quantity">Quantity</label><br>
+                        <input type="number" id="quantity" name="quantity" value="" min="1" max="10" required><br><br>
+                        <label for="cardname">Name on Card</label><br>
+                        <input type="text" id="cardname" name="cardname" value="" required><br><br>
+                        <label for="cardname">Expiration Month</label><br>
+                        <select name="expmonth" id="expmonth">
+                            <option value="jan">(01) January</option>
+                            <option value="feb">(02) February</option>
+                            <option value="mar">(03) March</option>
+                            <option value="apr">(04) April</option>
+                            <option value="may">(05) May</option>
+                            <option value="jun">(06) June</option>
+                            <option value="jul">(07) July</option>
+                            <option value="aug">(08) August</option>
+                            <option value="sep">(09) September</option>
+                            <option value="oct">(10) October</option>
+                            <option value="nov">(11) November</option>
+                            <option value="dec">(12) December</option>
+                        </select>
+                        <br><br>
+                        <label for="expyear">Expiration Year</label><br>
+                        <input type="number" id="expyear" name="expyear" value="" min="2021" required><br><br>
+                        <label for="cvv">CVV</label><br>
+                        <!--
+                        RegEx pattern for CVV
+                        Inpiration from https://stackoverflow.com/a/19445717
+                        -->
+                        <input type="text" id="cvv" name="cvv" value="" pattern="[0-9]{3}" required>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" id="buy-btn" value="Buy">
+        </form>
+    </div>
+    <div class="footer">
+        <p>Copyright &copy; 2021 Zahin and Elias</p>
+        <!--
+        I followed a youtube tutorial for making these social media buttons
+        When you hover over them, there's a little animation of the brands' color
+        popping out into the icons
+        The cool part in my opinion is that it's done in pure CSS - no JavaScript!
+        Video: https://youtu.be/0MzVTOQaFFc
+        -->
+        <ul class="social-media-btns">
+            <li><a href="https://instagram.com/milkdudyeetdingus" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/milkdudyeetdingus" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://youtube.com/user/milkdud" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+            <li><a href="https://github.com/zahinabrer5" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+        </ul>
+    </div>
+    <!-- jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--
+    Disable full name and email fields if #useacc checkbox is checked
+    Inspiration from https://stackoverflow.com/a/16930133
+    -->
+    <script>
+        jQuery(function($) {
+            $('#useacc').click(function() {
+                var cb1 = $('#useacc').is(':checked');
+                $('#fullname, #email').prop('disabled', cb1);
+            });
+        });
+    </script>
+</body>
+</html>

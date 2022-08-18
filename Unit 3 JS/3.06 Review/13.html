@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Age Calculator (Question 13)</title>
+</head>
+<body>
+	<script>
+		const instant = new Date();
+		const currentYear = instant.getFullYear();
+		const currentMonth = instant.getMonth()+1;
+		const currentDate = instant.getDate();
+
+		let birthYear = Number(prompt("Enter your birthyear (eg. 2006): "));
+		while (isNaN(birthYear) || !Number.isInteger(birthYear) || birthYear == '' || birthYear < 1600 || birthYear > currentYear) {
+			alert("Invalid year");
+			birthYear = Number(prompt("Enter your birthyear (eg. 2006): "));
+		}
+
+		let birthMonth = Number(prompt("Enter your birthmonth (eg. 4): "));
+		while (isNaN(birthMonth) || !Number.isInteger(birthMonth) || birthMonth == '' || birthMonth < 1 || birthMonth > 12
+			|| (birthYear == currentYear && birthMonth > currentMonth)) {
+			alert("Invalid month");
+			birthMonth = Number(prompt("Enter your birthmonth (eg. 4): "));
+		}
+
+		function has30Days(month) {
+			return month == 4 || month == 6 || month == 9 || month == 11;
+		}
+
+		function isLeapYear(year) {
+			return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
+		}
+
+		let birthDate = Number(prompt("Enter your birthdate (eg. 3): "));
+		while (isNaN(birthDate) || !Number.isInteger(birthDate) || birthDate == '' || birthDate < 1 || birthDate > 31
+			|| (has30Days(birthMonth) && birthDate > 30)
+			|| (!isLeapYear(birthYear) && birthMonth == 2 && birthDate > 28)
+			|| (birthYear == currentYear && birthMonth == currentMonth && birthDate > currentDate)) {
+			alert("Invalid date");
+			birthDate = Number(prompt("Enter your birthdate (eg. 3): "));
+		}
+
+		let age = currentYear - birthYear;
+		if (currentMonth < birthMonth || (currentMonth == birthMonth && currentDate < birthDate))
+			age--;
+
+		document.write("You are " + age + " year" + (age == 1 ? '' : 's') + " old");
+	</script>
+</body>
+</html>

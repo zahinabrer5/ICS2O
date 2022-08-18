@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions 1 to 6</title>
+
+    <style>
+        .outer-li {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <ol type="1">
+        <li class="outer-li">Indicate the output of:</li>
+        <pre>var y,z;
+y = 2;
+z = 3;
+document.write(y + " + " + z + " is " + y + z);
+document.write(y + " + " + z + " is " + (y + z));</pre>
+        <ul><li>2 + 3 is 23<br>2 + 3 is 5</li></ul>
+        <li class="outer-li">What is the difference between a variable and a constant? Give an example of how you would define one of each in JS.</li>
+        <ul>
+            <li>A variable is a container that can vary in what it holds over the course of the program, whereas a constant stays the same and can't be changed.</li>
+            <li><pre>var x = 7; // Variables can be defined with keyword 'var'
+let y = -3; // Variables can also be defined with 'let'
+const PI = 3.14159265; // Constants are defined with 'const' and their names should be capitalized</pre></li>
+        </ul>
+        <li class="outer-li">What is the difference between the data type Number and String? Give an example of each.</li>
+        <ul>
+            <li><code>Number</code>s are like numbers in math, in that they can be integers, negative, decimal (called a floating point number) or they could be 0. You can perform arithemtic operations on <code>Number</code>s like you can in math.</li>
+            <ul><li><pre>const TEMP = -7.3;
+const FEELS_LIKE = TEMP*APPARENT_TEMP_COEFF;</pre></li></ul>
+            <li><code>String</code>s are an array of characters that can form words, sentences, passwords, etc. <code>String</code>s can also be added together, but when we do this they're literally just put together which is called concatenation. There are also other operations for <code>String</code>s including converting the case to all caps or all lowercase. The following is a definition of a string literal:</li>
+            <ul><li><pre>const USER = "dingus123";</pre></li></ul>
+        </ul>
+        <li class="outer-li">Indicate an appropriate variable name and write a definition statement with an appropriate value for each variable:</li>
+        <ol type="a">
+            <li>A person’s name: <code>const NAME = "Zahin";</code></li>
+            <li>A person’s Social Insurance number: <code>const SIN = 1234123456;</code></li>
+            <li>A person’s bank account total: <code>var total = 1275.43;</code></li>
+            <li>A person’s age: <code>var age = 15;</code></li>
+            <li>A decision to play again. <code>var playAgain = true;</code></li>
+        </ol>
+        <li class="outer-li">How do you collect user input? Write the JS statement to collect the user’s response to a question.</li>
+        <ul>
+            <li>You can collect user input in JS using the <code>prompt</code> function:<br><pre>const name = prompt("What is your name?");</pre></li>
+            <li>The browser will display a dialog box with "What is your name?" and will have a space for entering input.</li>
+        </ul>
+        <li class="outer-li">Identify two identifiers that cannot be used as a variable name. Indicate why.</li>
+        <ul><li><code>var</code> and <code>const</code> cannot be used as variable names because they are already used as keywords in JavaScript.</li></ul>
+    </ol>
+</body>
+</html>

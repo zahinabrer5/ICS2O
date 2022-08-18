@@ -1,0 +1,6 @@
+#mydiv {
+    color: white;
+    height: 10000px;
+    /* background-image: repeating-linear-gradient(red, yellow 10%, green 20%); */
+    background-image: repeating-linear-gradient(69deg, red, orange 3%, yellow 5%, green 7%, blue 11%, indigo 13%, violet 17%);
+}

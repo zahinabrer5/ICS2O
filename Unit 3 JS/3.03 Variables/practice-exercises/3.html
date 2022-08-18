@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average</title>
+</head>
+<body>
+    <script>
+        alert("Welcome to the Average Calculator! This program calculates the average between 4 given grades.");
+
+        const gr1 = Number(prompt("Please enter your 1st grade (in percentage):"));
+        const gr2 = Number(prompt("Please enter your 2nd grade (in percentage):"));
+        const gr3 = Number(prompt("Please enter your 3rd grade (in percentage):"));
+        const gr4 = Number(prompt("Please enter your 4th grade (in percentage):"));
+
+        const avg = (gr1+gr2+gr3+gr4)/4;
+
+        document.write("Average: " + avg + "%");
+    </script>
+</body>
+</html>

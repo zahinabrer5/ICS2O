@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minutes to Hours and Minutes (Question 8)</title>
+</head>
+<body>
+    <script>
+        let mins = Number(prompt("Enter minutes: "));
+        while (isNaN(mins) || mins < 0 || !Number.isInteger(mins) || mins == '') {
+            alert("Invalid input... please input a positive integer");
+            mins = Number(prompt("Enter minutes: "));
+        }
+
+        const hours = Math.floor(mins/60);
+        const remainingMins = mins % 60;
+        document.write(`${mins} minute${mins==1?'':'s'} = ${hours} hour${hours==1?'':'s'} and ${remainingMins} minute${remainingMins==1?'':'s'}`);
+    </script>
+</body>
+</html>

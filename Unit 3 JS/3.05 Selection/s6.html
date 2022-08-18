@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Math Game</title>
+    <!-- Ubuntu Mono Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: black;
+        }
+        
+        /* Rounded table: https://stackoverflow.com/a/2586780 */
+        td {
+            padding: 15px;
+            border: 1px solid white;
+        }
+        table {
+            border-collapse: collapse;
+            border-radius: 30px;
+            border-style: hidden;
+            box-shadow: 0 0 0 1px white;
+        }
+        
+        #container {
+            font-family: 'Ubuntu Mono', monospace;
+            font-size: 1.5em;
+            color: white;
+        }
+        #center-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="center-div">
+        <div id="container">
+            <h1>Fun Math Game!</h1>
+            <table id="table">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <p id="percentage"></p>
+        </div>
+    </div>
+    <script>
+        const table = document.getElementById("table");
+        table.rows[0].cells[0].innerHTML = "Question";
+        table.rows[1].cells[0].innerHTML = "Your Answer";
+        table.rows[2].cells[0].innerHTML = "Actual Answer";
+        table.rows[3].cells[0].innerHTML = "Result";
+        let correct = 0;
+        for (let i = 0; i < 5; i++, correct++) {
+            const a = Math.floor(15*Math.random()+1);
+            const b = Math.floor(15*Math.random()+1);
+            const operation = Math.random() < 0.5 ? '+' : '-';
+            const question = a + operation + b;
+            table.rows[0].cells[i+1].innerHTML = question;
+            let userAns = Number(prompt(question + "= ?"));
+            while (isNaN(userAns) || userAns == '') {
+                alert("Invalid entry");
+                userAns = Number(prompt(question + "= ?"));
+            }
+            const answer = a + (operation === '+' ? 1 : -1)*b;
+            table.rows[2].cells[i+1].innerHTML = answer;
+            table.rows[3].cells[i+1].innerHTML = "Correct!";
+            if (userAns !== answer) {
+                table.rows[3].cells[i+1].innerHTML = "Incorrect :(";
+                correct--;
+            }
+            table.rows[1].cells[i+1].innerHTML = userAns;
+        }
+        document.getElementById("percentage").innerHTML = "Percentage correct: "+(correct/5*100)+"%";
+    </script>
+</body>
+</html>

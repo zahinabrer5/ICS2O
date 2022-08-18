@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Calculator</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <form>
+        <p>Memory: <span id="memDisp"></span></p>
+        <input type="text" id="screen" value=""><br>
+        <button type="button" onclick="addNum(1)" class="bNum">1</button>
+        <button type="button" onclick="addNum(2)" class="bNum">2</button>
+        <button type="button" onclick="addNum(3)" class="bNum">3</button><br>
+        <button type="button" onclick="addNum(4)" class="bNum">4</button>
+        <button type="button" onclick="addNum(5)" class="bNum">5</button>
+        <button type="button" onclick="addNum(6)" class="bNum">6</button><br>
+        <button type="button" onclick="addNum(7)" class="bNum">7</button>
+        <button type="button" onclick="addNum(8)" class="bNum">8</button>
+        <button type="button" onclick="addNum(9)" class="bNum">9</button><br>
+        <button type="button" onclick="addNum(0)" class="bNum">0</button>
+        <button type="button" onclick="addNum('.')" class="bNum">.</button>
+        <button type="button" onclick="setSign('+')" class="bOperation">+</button><br>
+        <button type="button" onclick="setSign('-')" class="bOperation">-</button> 
+        <button type="button" onclick="setSign('*')" class="bOperation">*</button> 
+        <button type="button" onclick="setSign('/')" class="bOperation">/</button><br>
+        <button type="button" onclick="setSign('/100')" class="bOperation">%</button>
+        <button type="button" onclick="setSign('**')" class="bOperation">^</button>
+        <button type="button" onclick="setSign('**0.5')" class="bOperation">√</button><br>
+        <button type="button" onclick="setSign('**(-1)')" class="bOperation">1/x</button>
+        <button type="button" onclick="CEBtn()" class="bClear">CE</button>
+        <button type="button" onclick="memStore()" class="bMemory">MS</button><br>
+        <button type="button" onclick="memClear()" class="bMemory">MC</button>
+        <button type="button" onclick="memRecall()" class="bMemory">MR</button>
+        <button type="button" onclick="memPlus()" class="bMemory">M+</button><br>
+        <button type="button" onclick="memMinus()" class="bMemory">M-</button>
+        <button type="button" onclick="equalPressed()" id="bEqual">=</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

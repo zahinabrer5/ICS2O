@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- DM Mono font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
+    <!-- Noto Sans font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Social media buttons (used tutorial) -->
+    <link rel="stylesheet" href="social-media-btns.css">
+    <!-- Custom styling -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Register styling -->
+    <link rel="stylesheet" href="login.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <div class="login register">
+        <form action="" method="GET">
+            <table width="100%">
+                <tr>
+                    <td>
+                        <label for="email">Full Name</label><br>
+                        <input type="text" class="text-input" id="fullname" name="fullname" value="" required><br><br>
+                        <label for="email">Username</label><br>
+                        <input type="text" class="text-input" id="uname" name="uname" value="" required><br><br>
+                    </td>
+                    <td>
+                        <label for="email">Email</label><br>
+                        <input type="email" class="text-input" id="email" name="email" value="" required><br><br>
+                        <label for="pword">Password</label><br>
+                        <input type="password" class="text-input" id="pword" name="pword" value="" required><br><br>
+                        <label for="confirmpword">Confirm Password</label><br>
+                        <input type="password" class="text-input" id="confirmpword" name="confirmpword" value="" required><br><br>
+                    </td>
+                </tr>
+                <tr><td colspan="2"><a class="login-link" href="account.html">Back to Login</a><br><br></td></tr>
+            </table>
+            <input type="submit" id="login-btn" value="Register">
+        </form>
+    </div>
+</body>
+</html>

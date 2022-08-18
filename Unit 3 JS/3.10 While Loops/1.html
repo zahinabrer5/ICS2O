@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Checker</title>
+</head>
+<body>
+    <p>You're in 😎</p>
+    <img src="img/hackerman.png" alt="hackerman" width="300px">
+    <script>
+        const passwords = [
+            "hello",
+            "password",
+            "password123",
+            "strong_password",
+            "username",
+            "goodbye",
+            "00000000"
+        ];
+        const password = passwords[Math.floor(passwords.length*Math.random())];
+        let out = "Enter password...\nOptions:\n";
+        for (let p of passwords)
+            out += p + '\n';
+        let entered = prompt(out);
+        while (entered != password)
+            entered = prompt(out);
+    </script>
+</body>
+</html>

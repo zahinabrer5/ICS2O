@@ -1,0 +1,96 @@
+/* I followed a youtube tutorial for making these social media buttons */
+
+ul.social-media-btns li {
+    list-style: none;
+    float: left;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #404040;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    font-size: 20px;
+    z-index: 1;
+    transition: 0.5s ease-in-out;
+    /* margin-right: 0;
+    margin-bottom: 0;
+    margin-top: 0; */
+}
+
+ul.social-media-btns li a {
+    color: white;
+}
+
+ul.social-media-btns li:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    /* background: lightgrey; */
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.3s ease-in-out;
+}
+
+ul.social-media-btns li:after {
+    content: '';
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    right: -100%;
+    top: 0;
+    background: rgba(255, 255, 255, 0.3);
+    transition: 0.5s ease-in-out;
+    transition-delay: 0.3s;
+    /* Make entire button area clickable (part 1) */
+    z-index: -1;
+}
+
+ul.social-media-btns li:hover:before {
+    left: 0;
+    transform: scale(0.9);
+}
+
+ul.social-media-btns li:hover:after {
+    right: 0%;
+}
+
+ul.social-media-btns li:nth-child(1):before {
+    background: linear-gradient(45deg, yellow 0%, red 50%, purple 100%);
+}
+
+ul.social-media-btns li:nth-child(2):before {
+    background: #1da1f2;
+}
+
+ul.social-media-btns li:nth-child(3):before {
+    background: red;
+}
+
+ul.social-media-btns li:nth-child(4):before {
+    background: #171515;
+}
+
+ul.social-media-btns li .fa-brands {
+    transition: 0.3s ease-in-out;
+}
+
+ul.social-media-btns li:hover .fa-brands {
+    color: white;
+}
+
+ul.social-media-btns {
+    float: right;
+}
+
+ul.social-media-btns li a {
+    /* Make entire button area clickable (part 2) */
+    display: block;
+}

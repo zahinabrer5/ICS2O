@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>f5.html</title>
+</head>
+<body>
+    <script>
+        function has30Days(month) {
+            return month == 4 || month == 6 || month == 9 || month == 11;
+        }
+
+        function isLeapYear(year) {
+            return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
+        }
+        
+        function calculateAge(birthDate, birthMonth, birthYear) {
+            const instant = new Date();
+    		const currentYear = instant.getFullYear();
+    		const currentMonth = instant.getMonth()+1;
+    		const currentDate = instant.getDate();
+    
+    		let age = currentYear - birthYear;
+    		if (currentMonth < birthMonth || (currentMonth == birthMonth && currentDate < birthDate))
+    			age--;
+
+            return age;
+        }
+        
+        function processData() {
+            const output = document.getElementById("output");
+            
+            const fullName = document.getElementById("fname").value+' '+document.getElementById("lname").value;
+            output.innerHTML = "Your full name: "+fullName+"<br>";
+
+            const birthday = document.getElementById("birthday").value.split("-");
+            const birthYear = birthday[0];
+            const birthMonth = birthday[1];
+            const birthDate = birthday[2];
+            output.innerHTML += `You are ${calculateAge(birthDate,birthMonth,birthYear)} year(s) old!<br>`;
+            
+            const currentGrade = Number(document.getElementById("grade").value.substring(1));
+            let gradeComment;
+            if (currentGrade < 7) gradeComment = "You're in elementary school!";
+            else if (currentGrade < 9) gradeComment = "You're in middle school!";
+            else switch(currentGrade) {
+                case(9): gradeComment = "You're a Freshman!"; break;
+                case(10): gradeComment = "You're a Sophomore!"; break;
+                case(11): gradeComment = "You're a Junior!"; break;
+                case(12): gradeComment = "You're a Senior!"; break;
+            }
+            output.innerHTML += `Your current grade: ${currentGrade} (${gradeComment})<br>`;
+            
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            let color;
+            if (gender == "male") color = "#348feb";
+            else if (gender == "female") color = "#eb34ba";
+            else color = "#8334eb";
+            output.innerHTML += `Your gender: <span style="color:${color};">${gender == "otherGen" ? "other" : gender}</span><br>`;
+            
+            const favColor = document.getElementById("favColor").value;
+            output.innerHTML += `<b><span style="color:${favColor};">This is your favourite colour.</span></b><br>`;
+
+            const favTime = document.getElementById("favTime").value;
+            let hour = Number(favTime.split(":")[0]);
+            const timesOfDay = ["night", "morning", "afternoon", "evening"];
+            let timeOfDay = timesOfDay[Math.floor(hour/6)];
+            output.innerHTML += `Your favourite time of the day is ${favTime}. You're a(n) ${timeOfDay} person!<br>`;
+
+            const mood = document.getElementById("mood").value;
+            let moodStr = "Bad";
+            let moodColor = "#0000ff";
+            let moodComment = "We all have bad days sometimes 😔";
+            if (mood >= 50) {
+                moodStr = "Good";
+                moodColor = "#ffff00";
+                moodComment = "Glad your day is going alright! 👍";
+            }
+            output.innerHTML += `Your mood today: <b><span style="color:${moodColor};">${moodStr}</span></b>. ${moodComment}<br>`;
+
+            const cat = document.getElementById("cat").value;
+            const dog = document.getElementById("dog").value;
+            const pet = [cat,dog].join(", ");
+            const leftHanded = document.getElementById("leftHanded").value;
+            const rightHanded = document.getElementById("rightHanded").value;
+            const handedness = [leftHanded,rightHanded].join(", ");
+            output.innerHTML += `You have: ${pet}<br>You are: ${handedness}<br>`;
+            
+            const bio = document.getElementById("bio").value;
+            output.innerHTML += `<br>Your bio:<br><span style="font-family:monospace;">${bio}</span>`;
+        }
+    </script>
+
+    <form>
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+        <label for="byear">Birth Year:</label><br>
+        <select name="byear" id="byear"></select><br><br>
+        <label for="bmonth">Birth Month:</label><br>
+        <select name="bmonth" id="bmonth">
+            <option value="jan">January</option>
+            <option value="feb">February</option>
+            <option value="mar">March</option>
+            <option value="apr">April</option>
+            <option value="may">May</option>
+            <option value="jun">June</option>
+            <option value="jul">July</option>
+            <option value="aug">August</option>
+            <option value="sep">September</option>
+            <option value="oct">October</option>
+            <option value="nov">November</option>
+            <option value="dec">December</option>
+        </select><br><br>
+        <label for="byear">Birth Date:</label><br>
+        <select name="bdate" id="bdate">
+            <option value="d1">1</option>
+            <option value="d2">2</option>
+            <option value="d3">3</option>
+            <option value="d4">4</option>
+            <option value="d5">5</option>
+            <option value="d6">6</option>
+            <option value="d7">7</option>
+            <option value="d8">8</option>
+            <option value="d9">9</option>
+            <option value="d10">10</option>
+            <option value="d11">11</option>
+            <option value="d12">12</option>
+            <option value="d13">13</option>
+            <option value="d14">14</option>
+            <option value="d15">15</option>
+            <option value="d16">16</option>
+            <option value="d17">17</option>
+            <option value="d18">18</option>
+            <option value="d19">19</option>
+            <option value="d20">20</option>
+            <option value="d21">21</option>
+            <option value="d22">22</option>
+            <option value="d23">23</option>
+            <option value="d24">24</option>
+            <option value="d25">25</option>
+            <option value="d26">26</option>
+            <option value="d27">27</option>
+            <option value="d28">28</option>
+            <option value="d29">29</option>
+            <option value="d30">30</option>
+            <option value="d31">31</option>
+        </select><br><br>
+        <label for="birthday">Please select your birthday:</label><br>
+        <input type="date" id="birthday" name="birthday" min="1900-01-01" max="2022-03-11"><br><br>
+        <label for="byear">Your Current Grade:</label><br>
+        <select name="grade" id="grade">
+            <option value="g1">1</option>
+            <option value="g2">2</option>
+            <option value="g3">3</option>
+            <option value="g4">4</option>
+            <option value="g5">5</option>
+            <option value="g6">6</option>
+            <option value="g7">7</option>
+            <option value="g8">8</option>
+            <option value="g9">9</option>
+            <option value="g10">10</option>
+            <option value="g11">11</option>
+            <option value="g12">12</option>
+        </select><br><br>
+        <label for="gender">Your Gender:</label><br>
+        <input type="radio" name="gender" id="male" value="male" checked><label for="male">Male</label><br>
+        <input type="radio" name="gender" id="female" value="female"><label for="female">Female</label><br>
+        <input type="radio" name="gender" id="otherGen" value="otherGen"><label for="otherGen">Other</label><br><br>
+        <label for="favColor">Your favourite colour:</label><br>
+        <input type="color" name="favColor" id="favColor"><br><br>
+        <label for="favTime">Your favourite time of day:</label><br>
+        <input type="time" name="favTime" id="favTime"><br><br>
+        <label for="mood">How is your overall mood today?</label><br>
+        Bad &#x1F641;<input type="range" name="mood" id="mood">Good &#x1F604;<br><br>
+        Check all that apply:<br>
+        <input type="checkbox" id="cat" name="cat" value="cat">
+        <label for="cat">I have a cat</label><br>
+        <input type="checkbox" id="dog" name="dog" value="dog">
+        <label for="dog">I have a dog</label><br>
+        <input type="checkbox" id="leftHanded" name="leftHanded" value="left handed">
+        <label for="leftHanded">I am left handed</label><br>
+        <input type="checkbox" id="rightHanded" name="rightHanded" value="right handed">
+        <label for="rightHanded">I am right handed</label><br><br>
+        <label for="bio">A short bio of yourself:</label><br>
+        <textarea name="bio" id="bio" cols="40" rows="5"></textarea><br><br>
+        <button type="button" onclick="processData()">Submit</button>
+    </form>
+    <hr>
+    <b>Output:</b><br>
+    <p id="output"></p>
+
+    <script>
+        const date = new Date();
+        const currentYear = date.getFullYear();
+        
+        const byear = document.getElementById("byear");
+        for (let year = currentYear; year >= currentYear - 100; year--)
+            byear.innerHTML += `<option value="y${year}">${year}</option>`;
+
+        // https://stackoverflow.com/a/49916376
+        const birthday = document.getElementById("birthday");
+        birthday.max = date.toISOString().split("T")[0];
+    </script>
+</body>
+</html>

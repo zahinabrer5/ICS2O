@@ -1,0 +1,24 @@
+body {
+    background-image: linear-gradient(45deg, #5c7aff, #5cff5c);
+}
+
+#madlib h1 {
+    font-family: 'Bakbak One', cursive;
+    color: white;
+    -webkit-text-stroke: 2px black;
+}
+
+#madlib {
+    width: 75%;
+    border: 5px solid #5c7aff;
+    padding: 20px;
+    background-color: #f1ff5c;
+}
+
+.center-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}

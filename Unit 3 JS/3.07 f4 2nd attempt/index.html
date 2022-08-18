@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.07 f4 2nd attempt</title>
+</head>
+<body>
+    <script>
+        function recArea() {
+            var l = document.getElementById("myLength").value;
+            var w = document.getElementById("myWidth").value;
+            document.getElementById("areaParagraph").innerHTML = l*w;
+        }
+    </script>
+    <form>
+        Calculate the area of a Rectanlge:<br><br>
+        Length<br>
+        <input type="text" id="myLength" value=20><br>
+        Width<br>
+        <input type="text" id="myWidth" value=4><br><br>
+        <button type="button" onclick="recArea()">Calculate Area</button><br>
+    </form>
+    <br>
+    The area is:
+    <p id="areaParagraph"></p>
+</body>
+</html>

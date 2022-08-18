@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle</title>
+</head>
+<body>
+    <script>
+        alert("Welcome to the Awesome Rectangle Calculator V1.00! This program calculates the perimeter and area of a rectangle with a given base and height and writes it to the document.");
+
+        const b = Number(prompt("Please enter a base value:"));
+        const h = Number(prompt("Please enter a height value:"));
+
+        const P = 2*b+2*h;
+        const A = b*h;
+
+        document.write("Perimeter: " + P + " units<br>");
+        document.write("Area: " + A + " units sqaured");
+    </script>
+</body>
+</html>

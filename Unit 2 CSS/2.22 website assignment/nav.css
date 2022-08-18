@@ -1,0 +1,62 @@
+.nav {
+    list-style-type: none;
+    background-color: #222;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nav-item {
+    float: left;
+}
+
+.nav-item a {
+    /* color: white; */
+    text-decoration: none;
+    padding: 15px 15px;
+    display: block;
+    font-size: 1.2rem;
+}
+
+.nav-item a.active {
+    color: #72EFDD;
+    background-color: #6930c3;
+}
+
+.nav-item a:hover {
+    color: white;
+}
+
+/* On hover, the navbar items should have a black background, except the active item */
+.nav-item a:hover:not(.active) {
+    background-color: black;
+}
+
+.right {
+    float: right;
+}
+
+.dropdown-content {
+    background-color: white;
+    position: absolute;
+    display: none;
+    z-index: 1;
+    min-width: 250px;
+    border: 1px solid black;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    color: black;
+    padding: 15px 15px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    color: white;
+    background-color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

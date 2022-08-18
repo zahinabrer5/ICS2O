@@ -1,0 +1,9 @@
+div {
+  float: left;
+  width: 40%;
+  padding: 20px;
+}
+
+#madlib {
+  font-family: 'Comic Neue', sans-serif;
+}

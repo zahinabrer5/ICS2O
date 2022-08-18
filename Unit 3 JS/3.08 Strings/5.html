@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings Exercise 5</title>
+</head>
+<body>
+    <input type="text" id="str1" value="Put 1st string here"><br><br>
+    <input type="text" id="str2" value="Put 2nd string here"><br><br>
+    <input type="text" id="str3" value="Put 3rd string here"><br><br>
+    <button type="button" onclick="sortStr()">Sort</button><br><br>
+    <div id="out"></div>
+    <script>
+        function sortStr() {
+            const str1 = document.getElementById("str1").value.toLowerCase();
+            const str2 = document.getElementById("str2").value.toLowerCase();
+            const str3 = document.getElementById("str3").value.toLowerCase();
+            const sorted = [str1, str2, str3].sort();
+            const out = document.getElementById("out");
+            out.innerHTML = "<ul>";
+            for (let i = 0; i < 3; i++)
+                out.innerHTML += `<li>${sorted[i]}</li>`;
+            out.innerHTML += "</ul>";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Comparison</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- DM Mono font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
+    <!-- Noto Sans font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Social media buttons (used tutorial) -->
+    <link rel="stylesheet" href="social-media-btns.css">
+    <!-- Custom styling -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Navbar styling -->
+    <link rel="stylesheet" href="nav.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <ul class="nav">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item dropdown">
+            <a href="#">Products <i class="fa fa-caret-down"></i></a>
+            <div class="dropdown-content">
+                <a href="computers/alienware.html">Alienware Gaming PC</a>
+                <a href="computers/thinkbook.html">Lenovo Thinkbook</a>
+                <a href="computers/mbp.html">MacBook Pro 13"</a>
+            </div>
+        </li>
+        <li class="nav-item"><a class="active" href="comparison.html">Comparison</a></li>
+        <li class="nav-item"><a href="glossary.html">Glossary</a></li>
+        <li class="nav-item"><a href="buy.html">Purchase</a></li>
+        <li class="nav-item"><a href="about.html">About Us</a></li>
+        <li class="nav-item right"><a href="account.html">My Account</a></li>
+    </ul>
+
+    <div class="table-overflow-wrapper">
+        <table class="prod-comparison-table">
+            <tr>
+                <th>Computer</th>
+                <th>Dimensions</th>
+                <th>Power Supply/Battery</th>
+                <th>CPU</th>
+                <th>Motherboard</th>
+                <th>RAM</th>
+                <th>GPU</th>
+                <th>SSD</th>
+                <th>Monitor</th>
+                <th>Operating System</th>
+                <th>Peripherals</th>
+                <th>Ports</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td class="prod-comparison-img"><a href="computers/alienware.html"><div class="img-overflow-wrapper"><img src="../images/alienware.png"></div></a></td>
+                <td>
+                    <div class="overflow-wrapper">
+                        Height: 44.18 cm<br>
+                        Width: 22.28 cm<br>
+                        Length: 43.19 cm<br>
+                        Weight: 17.8 kg
+                    </div>
+                </td>
+                <td><div class="overflow-wrapper">1000W Power Supply</div></td>
+                <td><div class="overflow-wrapper">11th Gen Intel&reg; Core&trade; i9 11900KF (8-Core, 16MB Cache, 3.5GHz to 5.3GHz w/ Thermal Velocity Boost)</div></td>
+                <td><div class="overflow-wrapper">Micro ATX motherboard Intel&reg; Z490 Chipset</div></td>
+                <td><div class="overflow-wrapper">16 GB</div></td>
+                <td><div class="overflow-wrapper">NVIDIA&reg; GeForce&reg; GTX 1660 Ti 6GB GDDR6</div></td>
+                <td><div class="overflow-wrapper">2TB M.2 PCIe NVMe SSD</div></td>
+                <td><div class="overflow-wrapper">No monitor included</div></td>
+                <td><div class="overflow-wrapper">Windows 11 Pro, 64-bit</div></td>
+                <td><div class="overflow-wrapper">Not applicable</div></td>
+                <td>
+                    <div class="overflow-wrapper">
+                        Back:
+                        <ul>
+                            <li>(2x) Type-A USB 3.2 Gen 1 Ports</li>
+                            <li>Type-A USB 3.2 Gen 1 Ports with Powershare technology</li>
+                            <li>Type-C USB 3.2 Gen 1 Port with Powershare technology</li>
+                            <li>Headphone/Line Out</li>
+                            <li>Microphone/Line In</li>
+                        </ul>
+                        Front:
+                        <ul>
+                            <li>SPDIF Digital Output (Coax)</li>
+                            <li>SPDIF Digital Output (TOSLINK)</li>
+                            <li>RJ-45 Killer E3100G Gigabit Ethernet</li>
+                            <li>(6x) Type-A USB 2.0 Ports</li>
+                            <li>Type-C USB 3.2 Gen 2 with Powershare technology (up to 15W)</li>
+                            <li>Type-A USB 3.2 Gen 2</li>
+                            <li>Side Surround Output</li>
+                            <li>Microphone In</li>
+                            <li>Line Out</li>
+                            <li>(3x) Type-A USB 3.2 Gen 1</li>
+                            <li>Rear Surround Output</li>
+                            <li>Center/Subwoofer Output</li>
+                            <li>Line in</li>
+                        </ul>
+                    </div>
+                </td>
+                <td>
+                    <div class="overflow-wrapper price">
+                        $10.99<br>
+                        <a class="buy-now" href="buy.html">Buy Now!</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="prod-comparison-img"><a href="computers/thinkbook.html"><div class="img-overflow-wrapper"><img src="../images/lenovo.png"></div></a></td>
+                <td>
+                    <div class="overflow-wrapper">
+                        Height (lid closed): 1.63 cm<br>
+                        Width: 25.2 cm<br>
+                        Length: 35.6 cm<br>
+                        Weight: 1.4 kg
+                    </div>
+                </td>
+                <td><div class="overflow-wrapper">Up to 6.9 hrs battery life</div></td>
+                <td><div class="overflow-wrapper">AMD Ryzen 9 5900HX</div></td>
+                <td><div class="overflow-wrapper">Unspecified</div></td>
+                <td><div class="overflow-wrapper">16 GB</div></td>
+                <td><div class="overflow-wrapper">NVIDIA&reg; GeForce&reg; RTX 3060 (Laptop, 75W)</div></td>
+                <td><div class="overflow-wrapper">1TB SSD</div></td>
+                <td><div class="overflow-wrapper">Diagonal: 39.624 cm<br>Resolution: 2560p x 1600p</div></td>
+                <td><div class="overflow-wrapper">Windows 10 Pro, 64-bit</div></td>
+                <td><div class="overflow-wrapper">65W AC adapter (Supports Rapid Charge Pro)</div></td>
+                <td>
+                    <div class="overflow-wrapper">
+                            <ul>
+                            <li>2 x USB-C 3.2 Gen 2</li>
+                            <li>2 x USB-A 3.2 Gen 2</li>
+                            <li>SD card reader</li>
+                            <li>Headphone / mic combo</li>
+                            <li>Power-in</li>
+                        </ul>
+                    </div>
+                </td>
+                <td>
+                    <div class="overflow-wrapper price">
+                        $2.69<br>
+                        <a class="buy-now" href="buy.html">Buy Now!</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="prod-comparison-img"><a href="computers/mbp.html"><div class="img-overflow-wrapper"><img src="../images/mbp.png"></div></a></td>
+                <td>
+                    <div class="overflow-wrapper">
+                        Height (lid closed): 1.56 cm<br>
+                        Width: 30.41 cm<br>
+                        Length: 21.24 cm<br>
+                        Weight: 1.4 kg
+                    </div>
+                </td>
+                <td><div class="overflow-wrapper">17 - 20 hrs battery life</div></td>
+                <td><div class="overflow-wrapper">Apple M1</div></td>
+                <td><div class="overflow-wrapper">Unspecified</div></td>
+                <td><div class="overflow-wrapper">16 GB</div></td>
+                <td><div class="overflow-wrapper">Apple M1 (it's both the CPU & GPU)</div></td>
+                <td><div class="overflow-wrapper">2TB SSD</div></td>
+                <td><div class="overflow-wrapper">Diagonal: 33.02 cm<br>Resolution: 1680p x 1050p</div></td>
+                <td><div class="overflow-wrapper">macOS, 64-bit</div></td>
+                <td><div class="overflow-wrapper">61W USB‑C Power Adapter USB‑C Charge Cable (2 m)</div></td>
+                <td>
+                    <div class="overflow-wrapper">
+                        <ul>
+                            <li>2 USB 4 ports</li>
+                            <li>1 headphone port</li>
+                        </ul>
+                    </div>
+                </td>
+                <td>
+                    <div class="overflow-wrapper price">
+                        $99999999999.99<br>
+                        <a class="buy-now" href="buy.html">Buy Now!</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>Copyright &copy; 2021 Zahin and Elias</p>
+        <!--
+        I followed a youtube tutorial for making these social media buttons
+        When you hover over them, there's a little animation of the brands' color
+        popping out into the icons
+        The cool part in my opinion is that it's done in pure CSS - no JavaScript!
+        Video: https://youtu.be/0MzVTOQaFFc
+        -->
+        <ul class="social-media-btns">
+            <li><a href="https://instagram.com/milkdudyeetdingus" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/milkdudyeetdingus" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://youtube.com/user/milkdud" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+            <li><a href="https://github.com/zahinabrer5" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+        </ul>
+    </div>
+</body>
+</html>

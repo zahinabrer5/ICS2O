@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings Exercise 4</title>
+</head>
+<body>
+    <input type="text" id="word" value="Put a word here">
+    <input type="text" id="letter" value="Put a letter here">
+    <button onclick="lptter()">Get info</button>
+    <script>
+        function lptter() {
+            const word = document.getElementById("word").value;
+            const letter = document.getElementById("letter").value;
+            let out = `The word "${word}" does not contain an '${letter}'`;
+            if (word.includes(letter)) {
+                out = `The word "${word}" contains an '${letter}'\n`;
+                let randLetter = String.fromCharCode(97+Math.floor(26*Math.random()));
+                out += `The random letter picked was '${randLetter}'\n`;
+                out += `Your new word is: "${word.replace(letter, randLetter)}"`;
+            }
+            alert(out);
+        }
+    </script>
+</body>
+</html>

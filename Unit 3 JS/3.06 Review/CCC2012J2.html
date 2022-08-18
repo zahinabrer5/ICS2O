@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CCC 2021 Problem J2</title>
+</head>
+<body>
+	<script>
+		let depth1 = Number(prompt("Enter 1st depth reading:"));
+		while (isNaN(depth1) || !Number.isInteger(depth1) || depth1 < 1)
+			depth1 = Number(prompt("Enter 1st depth reading:"));
+
+		let depth2 = Number(prompt("Enter 2nd depth reading:"));
+		while (isNaN(depth2) || !Number.isInteger(depth2) || depth2 < 1)
+			depth2 = Number(prompt("Enter 2nd depth reading:"));
+
+		let depth3 = Number(prompt("Enter 3rd depth reading:"));
+		while (isNaN(depth3) || !Number.isInteger(depth3) || depth3 < 1)
+			depth3 = Number(prompt("Enter 3rd depth reading:"));
+
+		let depth4 = Number(prompt("Enter 4th depth reading:"));
+		while (isNaN(depth4) || !Number.isInteger(depth4) || depth4 < 1)
+			depth4 = Number(prompt("Enter 4th depth reading:"));
+
+		if (depth1 < depth2 && depth2 < depth3 && depth3 < depth4) {
+			document.write("Fish Rising");
+		} else if (depth1 > depth2 && depth2 > depth3 && depth3 > depth4) {
+			document.write("Fish Diving");
+		} else if (depth1 == depth2 && depth2 == depth3 && depth3 == depth4) {
+			document.write("Fish At Constant Depth");
+		} else {
+			document.write("No Fish");
+		}
+	</script>
+</body>
+</html>

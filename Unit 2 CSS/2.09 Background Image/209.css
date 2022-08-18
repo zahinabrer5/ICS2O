@@ -1,0 +1,69 @@
+body {
+	background-image: url(https://images.pexels.com/photos/1424246/pexels-photo-1424246.jpeg);
+	background-size: cover;
+    background-color: cornflowerblue;
+    background-repeat: no-repeat;
+    margin: 40px 20px 40px 20px;
+    border: 10px dotted cyan;
+    padding: 30px 30px 10px 30px;
+    font-family: "Comic Sans MS", monospace;
+    text-align: center;
+}
+
+.imgBack {
+    background-color: rgba(16, 58, 129, 0.7);
+    height: 350px;
+    border: 5px solid cyan;
+    padding-top: 50px;
+}
+
+.textOn {
+    width: 75%;
+    height: 60%;
+    background-color: rgba(100, 149, 237, 0.4);
+    margin: 0 auto;
+    padding-top: 30px;
+    border: 5px dashed cyan;
+    color: cyan;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h1 {
+    color: yellow;
+    text-decoration: underline;
+}
+
+h2 {
+    color: purple;
+    background-color: cyan;
+}
+
+button {
+    font-family: monospace;
+    font-size: 20px;
+    background-color: #FD8D92;
+    height: 50px;
+    width: 150px;
+    margin-top: 25px;
+    color: white;
+    font-weight: bold;
+    transition-duration: 0.5s;
+    border: 2px solid cyan;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+button:active {
+    background-color: #4CAF50;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliment Generator</title>
+</head>
+<body>
+    <p>You have the <i id="characteristic"></i> of a<span id="grammar"></span> <i id="adjective"></i> <i id="noun"></i>!</p>
+    <script>
+        const characteristics = [
+            "intellect",
+            "eyes",
+            "laugh",
+            "generosity",
+            "personality",
+            "courage",
+            "heart"
+        ];
+        const adjectives = [
+            "beautiful",
+            "amazing",
+            "brilliant",
+            "friendly",
+            "brave",
+            "happy",
+            "clever",
+            "caring",
+            "loyal",
+            "fun",
+            "cute",
+            "adorable",
+            "awesome",
+            "cool"
+        ];
+        const nouns = [
+            "hero",
+            "genius",
+            "unicorn",
+            "f-16 fighter jet",
+            "cat",
+            "lion"
+        ];
+        document.getElementById("characteristic").innerHTML = characteristics[Math.floor(characteristics.length*Math.random())];
+        const randAdj = adjectives[Math.floor(adjectives.length*Math.random())];
+        document.getElementById("grammar").innerHTML = "aeiou".includes(randAdj.charAt(0)) ? 'n' : '';
+        document.getElementById("adjective").innerHTML = randAdj;
+        document.getElementById("noun").innerHTML = nouns[Math.floor(nouns.length*Math.random())];
+    </script>
+</body>
+</html>

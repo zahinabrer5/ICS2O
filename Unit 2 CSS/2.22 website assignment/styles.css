@@ -1,0 +1,373 @@
+/*
+https://coolors.co/7400b8-6930c3-5e60ce-5390d9-4ea8de-48bfe3-56cfe1-64dfdf-72efdd-80ffdb
+*/
+
+body {
+    margin: 0;
+    font-family: 'DM Mono', monospace;
+    /* Make footer stick to bottom (https://dev.to/nehalahmadkhan/how-to-make-footer-stick-to-bottom-of-web-page-3i14) */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.products {
+    width: 100%;
+}
+
+.product {
+    width: 100%;
+}
+
+.product-name {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+a:link {
+    color: #4EA8DE;
+}
+
+a:visited {
+    color: #4EA8DE;
+}
+
+.product-link:link {
+    text-decoration: none;
+}
+
+.product-link:hover {
+    text-decoration: underline;
+}
+
+.background {
+    width: 100%;
+    height: 700px;
+    background-image: url("images/cpu-bg.jpg");
+    background-repeat: no-repeat;
+    background-color: cornflowerblue;
+    background-size: cover;
+}
+
+.background-tint {
+    width: 100%;
+    height: 700px;
+    background-color: rgba(0, 0, 0, 0.625);
+}
+
+.background-tint {
+    width: 100%;
+    height: 700px;
+    background-image: url("images/logo.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+}
+
+.product-heading {
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 2.5rem;
+    color: #80ffdb;
+    background-color: #6930C3;
+    margin-top: 0;
+}
+
+.product-hover:hover {
+    background-color: #D3D3D3;
+}
+
+.footer {
+    background-color: #222;
+    color: #4EA8DE;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Make footer stick to bottom */
+    margin-top: auto;
+}
+
+.content {
+    margin-bottom: 50px;
+}
+
+/* Text selection color */
+
+/* For firefox */
+::-moz-selection {
+    color: #80FFDB;
+    background: #7400B8;
+}
+
+::selection {
+    color: #80FFDB;
+    background: #7400B8;
+}
+
+.buy {
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.buy h1 {
+    color: white;
+    -webkit-text-stroke: 2px black;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 48px;
+}
+
+.buy-form-table {
+    border-spacing: 50px;
+    margin-top: -50px;
+    color: white;
+}
+
+.buy-form-table td {
+    width: 33.33%;
+    vertical-align: top;
+}
+
+.buy-form-table input {
+    border: solid 2px #6930c3;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.buy-form-table label {
+    font-size: 1.2em;
+}
+
+.buy-form-table select {
+    border: solid 2px #6930c3;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+#buy-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: solid 2px #7400B8;
+    border-radius: 30px;
+    font-size: 1.25rem;
+}
+
+#buy-btn:hover {
+    background-color: #48BFE3;
+    color: white;
+}
+
+.abt-content {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.abt-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.note {
+    font-style: italic;
+    color: #222;
+}
+
+.red-star {
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.wrap {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 200px;
+    float: left;
+}
+
+.wrap-ppl {
+    margin-left: 15px;
+    width: 200px;
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.abt-content p {
+    text-align: justify;
+}
+
+.logo-exp {
+    font-weight: bold;
+    color: #7400B8;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.25em;
+}
+
+.abt-content article p {
+    font-family: "Noto Sans", sans-serif;
+}
+
+hr {
+    border: 2px dashed #6930C3;
+}
+
+.product-table {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.product-specs-table {
+    border-spacing: 10px;
+}
+
+.prod-dimensions-table {
+    border-spacing: 5px;
+}
+
+.comp-parts-icons {
+    vertical-align: top;
+}
+
+.comp-parts-icons img {
+    width: 15px;
+}
+
+.product-img {
+    width: 500px;
+}
+
+.glossary-title {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.glossary-table {
+    width: 1200px;
+    border-spacing: 50px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.glossary-term {
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.glossary-term a {
+    text-decoration: none;
+}
+
+.glossary-pic {
+    width: 150px;
+}
+
+.glossary-pic img {
+    width: 100%;
+}
+
+.glossary-body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Trick from https://stackoverflow.com/a/20033427 */
+tab4 {
+    padding-left: 2em;
+}
+
+.table-overflow-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    overflow-x: auto;
+    border: 2px solid #6930C3;
+}
+
+.overflow-wrapper {
+    width: 200px;
+    height: 200px;
+    overflow: auto;
+}
+
+.img-overflow-wrapper {
+    width: 200px;
+    height: 200px;
+    display: flex;
+}
+
+.img-overflow-wrapper img {
+    width: 100%;
+    margin: auto;
+}
+
+.prod-comparison-table {
+    font-size: 0.8em;
+    border-spacing: 10px;
+    border-collapse: collapse;
+}
+
+.prod-comparison-table th, .prod-comparison-table td {
+    padding: 5px;
+    border: 1px solid #4EA8DE;
+}
+
+.prod-comparison-table th:hover, .prod-comparison-table td:hover {
+    background-color: #f3f3f3;
+}
+
+.prod-comparison-img {
+    width: 150px;
+}
+
+.prod-comparison-img img {
+    width: 100%;
+}
+
+.price {
+    color: red;
+    font-weight: bold;
+    text-align: right;
+    font-size: 1.2em;
+}
+
+.prod-comparison-table th {
+    font-size: 1.2em;
+}
+
+.buy-now {
+    font-size: 1.25em;
+    color: #5E60CE !important;
+}
+
+.buy-now-col {
+    text-align: center;
+    font-size: 1.5em;
+    background-color: #6930C3;
+    border-radius: 10px;
+    border: 5px solid #7400B8;
+}
+
+.buy-now-col:hover {
+    background-color: #48BFE3;
+    text-decoration: underline;
+}
+
+.buy-now-col a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+}

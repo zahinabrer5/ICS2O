@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic 8 Ball</title>
+</head>
+<body>
+    <p>Your question: <span id="given-question" style="font-weight:bold;font-size:1.5em;"></span></p>
+    <!-- Used for canvas "layers," idea from https://stackoverflow.com/a/3008863 -->
+    <div style="position: relative;">
+        <canvas id="layer1" width="500" height="500" style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
+        <canvas id="layer2" width="500" height="500" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+        <canvas id="layer3" width="500" height="500" style="position: absolute; left: 0; top: 0; z-index: 2;"></canvas>
+        <canvas id="layer4" width="500" height="500" style="position: absolute; left: 0; top: 0; z-index: 3;"></canvas>
+    </div>
+    <script>
+        // Draw 8 ball
+        const layer1 = document.getElementById('layer1').getContext('2d');
+        const layer2 = document.getElementById('layer2').getContext('2d');
+        const layer3 = document.getElementById('layer3').getContext('2d');
+        const layer4 = document.getElementById('layer4').getContext('2d');
+        
+        // ball
+        let gradient = layer1.createRadialGradient(250,250,0,250,250,200);
+        gradient.addColorStop(0, "#404040");
+        gradient.addColorStop(1, "black");
+
+        layer1.fillStyle = gradient;
+        layer1.arc(250,250,200,0,2*Math.PI);
+        layer1.fill();
+
+        // circular indent
+        layer2.fillStyle = "black";
+        layer2.arc(250,250,110,0,2*Math.PI);
+        layer2.fill();
+
+        // triangle in which response appears on
+        layer3.fillStyle = "blue";
+        layer3.beginPath();
+        layer3.moveTo(250,360);
+        layer3.lineTo(154,196);
+        layer3.lineTo(346,196);
+        layer3.fill();
+
+        // styling for response text
+        layer4.fillStyle = "white";
+        layer4.textAlign = "center";
+        layer4.font = "15px Arial";
+
+        // https://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
+        function wrapText(context, text, x, y, maxWidth, lineHeight) {
+            let words = text.split(' ');
+            let line = '';
+            for (let n = 0; n < words.length; n++) {
+                let testLine = line + words[n] + ' ';
+                let metrics = context.measureText(testLine);
+                let testWidth = metrics.width;
+                if (testWidth > maxWidth && n > 0) {
+                    context.fillText(line, x, y);
+                    line = words[n] + ' ';
+                    y += lineHeight;
+                } else line = testLine;
+            }
+            context.fillText(line, x, y);
+        }
+
+        // Make choice and print on 8 ball
+        const question = prompt("Ask me anything!");
+        
+        const choices = [
+            "It is certain.",
+            "It is decidedly so.",
+            "Without a doubt.",
+            "Yes definitely.",
+            "You may rely on it.",
+            "As I see it, yes.",
+            "Most likely.",
+            "Outlook good.",
+            "Yes.",
+            "Signs point to yes.",
+            "Reply hazy, try again.",
+            "Ask again later.",
+            "Better not tell you now.",
+            "Cannot predict now.",
+            "Concentrate and ask again.",
+            "Don't count on it.",
+            "My reply is no.",
+            "My sources say no.",
+            "Outlook not so good.",
+            "Very doubtful."
+        ];
+        const response = choices[Math.floor(Math.random()*choices.length)].toUpperCase().replace(".", "");
+        
+        // print response text on 8-ball, wrapping it
+        wrapText(layer4, response, 250, 250, 100, 25);
+
+        const givenQuestion = document.getElementById("given-question");
+        givenQuestion.innerHTML = question;
+    </script>
+</body>
+</html>
